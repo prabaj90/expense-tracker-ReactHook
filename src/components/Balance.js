@@ -8,7 +8,7 @@ export const Balance = () => {
     return (
         <>
             <h4>Your Balance</h4>
-            <h1 className={total >0 ? 'plus': 'minus'}>${total}</h1>
+            <h1 className={total >0 ? 'plus': 'minus'}>&#x20B9;{total}</h1>
         </>
     )
 }
