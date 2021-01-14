@@ -4,19 +4,22 @@ import {Balance} from './components/Balance';
 import {IncomeExpense} from './components/IncomeExpense';
 import {TransactionList} from './components/TransactionList';
 import {AddTransaction} from './components/AddTransaction';
+import {GlobalProvider} from './context/GlobalState';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
      <Header />
      <div className="container">
         <Balance />
         <IncomeExpense />
-        <TransactionList />
-        <AddTransaction />
+        <div className='splitWidth'>
+        <div className='leftWidth'><AddTransaction /></div>
+        <div className='rightWidth'><TransactionList /></div>
+        </div>
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
