@@ -3,11 +3,11 @@ import {GlobalContext} from '../context/GlobalState';
 
 export const AddTransaction = () => {
     const [text, setText] = useState('');
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState('0');
     const {addTransaction} = useContext(GlobalContext);
     const onSubmit = e =>{
         e.preventDefault();
-        const newTransaction = {
+         const newTransaction = {
             id: Math.floor(Math.random()*1000),
             text,
             amount: +amount
@@ -29,7 +29,8 @@ export const AddTransaction = () => {
                     (add Negative(-) sign if its Expenses)</label>
                 <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder="Enter amount..." />
              </div>
-             <button className="btn">Add transaction</button>
+             { text.length > 0 && amount !== '0' ?
+                <button className="btn">Add transaction</button> :'' }
             </form>
         </div>
     )
