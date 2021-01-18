@@ -29,7 +29,7 @@ export const AddTransaction = () => {
                     (add Negative(-) sign if its Expenses)</label>
                 <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder="Enter amount..." />
              </div>
-             { text.length > 0 && amount !== '0' ?
+             { text.length > 0 && (amount !== '0' && amount !== '') ?
                 <button className="btn">Add transaction</button> :'' }
             </form>
         </div>
