@@ -22,15 +22,15 @@ export const AddTransaction = () => {
             <form onSubmit={onSubmit}>
              <div className="form-control">
              <label htmlFor="text">Text </label>
-                 <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Enter text..." />
+                 <input type="text" value={text} onChange={(e)=>setText(e.target.value)} placeholder="Enter text..." tabindex="0"/>
              </div>
              <div className="form-control">
                 <label htmlFor="amount">Amount (&#x20B9;) <br />
                     (add Negative(-) sign if its Expenses)</label>
-                <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder="Enter amount..." />
+                <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder="Enter amount..." tabindex="0"/>
              </div>
              { text.length > 0 && (amount !== '0' && amount !== '') ?
-                <button className="btn">Add transaction</button> :'' }
+                <button className="btn" tabindex="0">Add transaction</button> :'' }
             </form>
         </div>
     )
